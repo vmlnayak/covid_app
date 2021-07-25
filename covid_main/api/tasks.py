@@ -19,7 +19,6 @@ def email_image(time_line, to_email, name):
     df = pd.DataFrame(time_line)
     fig = px.bar(df, x="date", y="new_confirmed", title='Corona Case in India')
     image_data = fig.to_image(format="png")
-    print("hi")
     html_content = render_to_string("email.html", context={'name': name})
     email = EmailMultiAlternatives("Covid data graph.", 'Body', 'from@example.com', [to_email])
     email.attach_alternative(html_content, "text/html")

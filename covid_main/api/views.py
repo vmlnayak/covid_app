@@ -141,7 +141,7 @@ class CovidDataAPI(GenericAPIView):
                                                               response_json.get('data').get('timeline'))
             response_json['data']['timeline'] = date_filtered_timeline
             if email:
-                email_image.delay(date_filtered_timeline, request.user.email, request.user.username)
+                email_image(date_filtered_timeline, request.user.email, request.user.username)
 
             return Response(response_json, status=status.HTTP_200_OK)
         except Country.DoesNotExist:

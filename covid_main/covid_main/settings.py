@@ -73,7 +73,6 @@ TEMPLATES = [
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # This is just for output of mail body. I am not using SMTP credentials here.
 # As per my consideration we can use SMTP backend in real-world application
-
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_USE_TLS = True
 # EMAIL_HOST = 'smtp.gmail.com'
@@ -85,7 +84,7 @@ WSGI_APPLICATION = 'covid_main.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+# Database configs
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
